@@ -13,9 +13,10 @@ export class AuthService {
       const uid = response.user.uid
       user.firebaseUid = uid
       user.email = form.email
-      // user.signupType = 1
+      user.signupType = 1
       this.verifyEmail(this.$fire.auth.currentUser)
       return this.saveUserOnDB(user).then((response) => {
+        if (response.user.emailVerified === false) { return }
         return response.data
       }).catch((e) => {
         return {
@@ -34,7 +35,8 @@ export class AuthService {
 
   async login (form) {
     try {
-      await this.$fire.auth.signInWithEmailAndPassword(form.email, form.pwd)
+      const fire = await this.$fire.auth.signInWithEmailAndPassword(form.email, form.pwd)
+      if (fire.user.emailVerified === false) { throw new Error('Correo no ha sido verificado') }
       const token = await this.$fire.auth.currentUser.getIdToken()
       const req = {}
       req.token = token
@@ -65,7 +67,7 @@ export class AuthService {
       user.fullname = result.additionalUserInfo.profile.name
       user.email = result.additionalUserInfo.profile.email
       user.profileImgSrc = result.additionalUserInfo.profile.picture
-      // user.signupType = 2
+      user.signupType = 2
       // this.verifyEmail(firebase.auth().currentUser);
       if (result.additionalUserInfo.isNewUser) {
         // try to save user on db
