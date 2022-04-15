@@ -29,11 +29,12 @@ export const actions = {
     return this.$auth.register(user).then((response) => {
       // dispatch('loading/desactivateLoading', null, { root: true })
       if (response.status === 'Ok') {
-        const obj = {
-          detail: response.data,
-          token: response.token
-        }
-        commit('SET_USER', obj)
+        // It enable auto login without verification
+        // const obj = {
+        //   detail: response.data,
+        //   token: response.token
+        // }
+        // commit('SET_USER', obj)
         const notification = {
           type: 'success',
           title: 'Registro e Inicio de sesión exitosos!',

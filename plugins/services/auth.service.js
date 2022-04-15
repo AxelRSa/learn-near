@@ -16,7 +16,6 @@ export class AuthService {
       user.signupType = 1
       this.verifyEmail(this.$fire.auth.currentUser)
       return this.saveUserOnDB(user).then((response) => {
-        if (response.user.emailVerified === false) { return }
         return response.data
       }).catch((e) => {
         return {
