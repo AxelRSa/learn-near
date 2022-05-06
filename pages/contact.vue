@@ -136,7 +136,7 @@ export default {
           message: ''
         }
       },
-      dismissSecs: 5,
+      dismissSecs: 10,
       dismissCountDown: 0
     }
   },

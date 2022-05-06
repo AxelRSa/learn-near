@@ -7,13 +7,13 @@
       Todos los cursos
     </b-button>
     <hr>
-    <div v-for="car, i in carousels" :key="'car'+[i]">
+    <!-- <div v-for="car, i in carousels" :key="'car'+[i]">
       <CourseCarousel :courses="car[i].courses">
         <template #title>
           <h3>{{ car[i].name }}</h3>
         </template>
       </CourseCarousel>
-    </div>
+    </div> -->
     <!--
     <CourseCarousel :courses="carousels[1].courses">
       <template #title>
