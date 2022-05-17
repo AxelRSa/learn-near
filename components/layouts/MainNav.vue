@@ -7,7 +7,7 @@
           class="mr-4 d-none d-sm-block"
         >
           <img
-            :src="require('@/assets/images/logo.png')"
+            src="~assets/images/logo.png"
             width="170px"
             height="30px"
           >
@@ -17,7 +17,7 @@
           class="mr-4 d-block d-sm-none"
         >
           <img
-            :src="require('@/assets/images/logo-tiny.png')"
+            src="~assets/images/logo-tiny.png"
             width="30px"
             height="30px"
           >

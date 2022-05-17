@@ -27,6 +27,7 @@ export default {
       src: '~/plugins/owl.js',
       ssr: false
     },
+    { src: '~/plugins/persistedState.client.js' },
     '~/plugins/services.plugin.js',
     '~/plugins/directives.js'
   ],
@@ -62,7 +63,7 @@ export default {
       storageBucket: process.env.NUXT_ENV_STORAGE_BUCKET,
       messagingSenderId: process.env.NUXT_ENV_MESSAGING_SENDER_ID,
       appId: process.env.NUXT_ENV_APP_ID,
-      measurementId: process.env.NUXT_ENV_MEASUREMENT_ID,
+      measurementId: process.env.NUXT_ENV_MEASUREMENT_ID
     },
     services: {
       auth: {

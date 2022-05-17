@@ -39,7 +39,7 @@
           </a>
         </li>
         <li class="dropdown-option">
-          <a>
+          <nuxt-link :to="{name: 'my-certificates'}">
             <BaseIcon
               class="mr-3"
               icon-name="cart-icon"
@@ -49,8 +49,10 @@
               <ParchmentIcon />
             </BaseIcon>
             Diplomas y certificaciones
-            <b-badge v-if="updateProfilePending" class="ml-4">Actualiza tus datos!</b-badge>
-          </a>
+            <b-badge v-if="updateProfilePending" class="ml-4">
+              Actualiza tus datos!
+            </b-badge>
+          </nuxt-link>
         </li>
         <hr role="separator" aria-orientation="horizontal" class="dropdown-divider my-2">
         <li class="dropdown-option">
